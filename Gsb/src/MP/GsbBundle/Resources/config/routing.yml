@@ -1,0 +1,3 @@
+Accueil:
+    path:      /accueil
+    defaults: { _controller: MPGsbBundle:Accueil:index }
