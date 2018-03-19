@@ -1,3 +1,10 @@
+Authentification:
+    path:      /
+    defaults: { _controller: MPGsbBundle:Accueil:index}
 Accueil:
     path:      /accueil
-    defaults: { _controller: MPGsbBundle:Accueil:index }
+    defaults: { _controller: MPGsbBundle:Accueil:index}
+
+Afficher:
+    path:       /Medicament
+    defaults: {_controller: MPGsbBundle:Medicament:liste}

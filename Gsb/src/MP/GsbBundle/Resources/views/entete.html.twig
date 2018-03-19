@@ -1,24 +1,18 @@
-<!DOCTYPE HTML>
 
-<html>
-
-  <head>
-
-    <meta charset="utf-8">
-
+{% block entete %}
+<!DOCTYPE html PUBLIC>
+<html >
+<head>
+<meta name="description" content="" />
+<meta name="keywords" content="" />
     <title>{% block title %}Gsb{% endblock %}</title>
-
-  </head>
-
+</head>
   <body>
-
-
-    {% block entete %}
-    <h1><a href="index.php?uc=accueil">Suivi de la visite médicale</a></h1>
+    <h1><a href="{{ path('Accueil') }}">Suivi de la visite médicale</a></h1>
                                                                     
-    {% endblock %}
-
-
+    {{ include("MPGsbBundle:Accueil:menu.html.twig") }}
+	
   </body>
 
 </html>
+    {% endblock %}
