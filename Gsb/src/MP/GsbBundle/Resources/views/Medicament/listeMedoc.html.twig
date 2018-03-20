@@ -1,8 +1,18 @@
 
 <h1> Liste des Medicaments</h1>
 
-{% for medoc in listMedocs %}
+<a href="{{ path('Ajouter') }}">Ajouter un Médicament</a>
 
-{{ advertt.content}}
+<table>
+	<tr><td>Depot Legal</td><td>Nom Commercial</td><td>Composition</td><td>Effet</td><td>Contre Indication</td><td>Prix</td></tr>
+
+	{% for medoc in listMedocs %}
+<tr>
+<td>{{ medoc.id }}</td>
+<td>{{ medoc.nomCommercial }}</td>
+<td>{{ medoc.composition }}</td>
+<td>{{ medoc.effet }}</td>
+<td>{{ medoc.ContreIndic }}</td>
+<td>{{ medoc.prixEchantillon }}</td>
 
 {% endfor %}

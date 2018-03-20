@@ -5,12 +5,12 @@ namespace MP\GsbBundle\Entity;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
- * Medicament
+ * Medicaments
  *
- * @ORM\Table(name="medicament")
- * @ORM\Entity(repositoryClass="MP\GsbBundle\Repository\MedicamentRepository")
+ * @ORM\Table(name="medicaments")
+ * @ORM\Entity(repositoryClass="MP\GsbBundle\Repository\MedicamentsRepository")
  */
-class Medicament
+class Medicaments
 {
     /**
      * @var int
@@ -24,7 +24,7 @@ class Medicament
     /**
      * @var string
      *
-     * @ORM\Column(name="NomCommercial", type="string", length=255, unique=true)
+     * @ORM\Column(name="NomCommercial", type="string", length=255)
      */
     private $nomCommercial;
 
@@ -45,16 +45,17 @@ class Medicament
     /**
      * @var string
      *
-     * @ORM\Column(name="ContreIndication", type="string", length=255)
+     * @ORM\Column(name="ContreIndic", type="string", length=255)
      */
-    private $contreIndication;
+    private $contreIndic;
 
     /**
      * @var string
      *
-     * @ORM\Column(name="Prix", type="decimal", precision=10, scale=1)
+     * @ORM\Column(name="PrixEchantillon", type="decimal", precision=10, scale=3)
      */
-    private $prix;
+    private $prixEchantillon;
+
 
 
     /**
@@ -72,7 +73,7 @@ class Medicament
      *
      * @param string $nomCommercial
      *
-     * @return Medicament
+     * @return Medicaments
      */
     public function setNomCommercial($nomCommercial)
     {
@@ -96,7 +97,7 @@ class Medicament
      *
      * @param string $composition
      *
-     * @return Medicament
+     * @return Medicaments
      */
     public function setComposition($composition)
     {
@@ -120,7 +121,7 @@ class Medicament
      *
      * @param string $effet
      *
-     * @return Medicament
+     * @return Medicaments
      */
     public function setEffet($effet)
     {
@@ -140,51 +141,51 @@ class Medicament
     }
 
     /**
-     * Set contreIndication
+     * Set contreIndic
      *
-     * @param string $contreIndication
+     * @param string $contreIndic
      *
-     * @return Medicament
+     * @return Medicaments
      */
-    public function setContreIndication($contreIndication)
+    public function setContreIndic($contreIndic)
     {
-        $this->contreIndication = $contreIndication;
+        $this->contreIndic = $contreIndic;
 
         return $this;
     }
 
     /**
-     * Get contreIndication
+     * Get contreIndic
      *
      * @return string
      */
-    public function getContreIndication()
+    public function getContreIndic()
     {
-        return $this->contreIndication;
+        return $this->contreIndic;
     }
 
     /**
-     * Set prix
+     * Set prixEchantillon
      *
-     * @param string $prix
+     * @param string $prixEchantillon
      *
-     * @return Medicament
+     * @return Medicaments
      */
-    public function setPrix($prix)
+    public function setPrixEchantillon($prixEchantillon)
     {
-        $this->prix = $prix;
+        $this->prixEchantillon = $prixEchantillon;
 
         return $this;
     }
 
     /**
-     * Get prix
+     * Get prixEchantillon
      *
      * @return string
      */
-    public function getPrix()
+    public function getPrixEchantillon()
     {
-        return $this->prix;
+        return $this->prixEchantillon;
     }
+
 }
-
