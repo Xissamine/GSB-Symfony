@@ -1,18 +1,27 @@
+{{ include("MPGsbBundle:Accueil:accueil.html.twig") }}
 
 <h1> Liste des Medicaments</h1>
 
-<a href="{{ path('Ajouter') }}">Ajouter un Médicament</a>
-
-<table>
-	<tr><td>Depot Legal</td><td>Nom Commercial</td><td>Composition</td><td>Effet</td><td>Contre Indication</td><td>Prix</td></tr>
-
+<a href="{{ path('Form') }}">Ajouter un Médicament</a>
+<table class="table">
+<thead>
+	<tr>
+	<th>Depot Legal</th>
+	<th>Nom Commercial</th>
+	<th>Composition</th>
+	<th>Effet</td>
+	<th>Contre Indication</th>
+	<th>Prix</th>
+	</tr>
+</thead>
 	{% for medoc in listMedocs %}
-<tr>
+	<tr class="success">
 <td>{{ medoc.id }}</td>
 <td>{{ medoc.nomCommercial }}</td>
 <td>{{ medoc.composition }}</td>
 <td>{{ medoc.effet }}</td>
 <td>{{ medoc.ContreIndic }}</td>
 <td>{{ medoc.prixEchantillon }}</td>
-
+</tr>
 {% endfor %}
+</table>

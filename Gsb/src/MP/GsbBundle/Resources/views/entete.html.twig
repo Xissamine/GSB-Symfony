@@ -1,17 +1,36 @@
 
 {% block entete %}
-<!DOCTYPE html PUBLIC>
-<html >
-<head>
-<meta name="description" content="" />
-<meta name="keywords" content="" />
-    <title>{% block title %}Gsb{% endblock %}</title>
-</head>
+
+<!DOCTYPE html>
+
+<html>
+
+  <head>
+
+  <link rel="stylesheet" href="{{ asset('css/bootstrap_bootstrap_1.css') }}">
+  <script src="{{ asset('js/jquery.min.js') }}"></script>
+  <script src="{{ asset('js/bootstrap.js') }}"></script>
+
+  <title>{% block title %}Gsb{% endblock %}</title>
+  </head>
+
   <body>
-    <h1><a href="{{ path('Accueil') }}">Suivi de la visite médicale</a></h1>
+
+    <div class="container">
+
+
+      <header class="row">
+
+        <div class="col-md-12">
+
+        <h1><a href="{{ path('Accueil') }}">Suivi de la visite médicale</a></h1>
                                                                     
-    {{ include("MPGsbBundle:Accueil:menu.html.twig") }}
-	
+    	{{ include("MPGsbBundle:Accueil:menu.html.twig") }}
+
+        </div>
+
+      </header>
+
   </body>
 
 </html>

@@ -1,20 +1,18 @@
-<div id="menu">
-	<ul>
-		<li class="first">
-			<span class="opener">Comptes-Rendu<b></b></span>
-				<ul>
-					<li><a href="">Nouveaux</a></li>
-					<li><a href="">Consulter</a></li>
-				</ul>
-		</li>
-		<li class="first">
-			<span class="opener">Consulter<b></b></span>
-				<ul>
-					<li><a href="{{ path('Afficher') }}">Médicaments</a></li>
-					<li><a href="">Praticiens</a></li>
-					<li><a href="">Autres visiteurs</a></li>
-				</ul>
-		</li>
-	</ul>
-	<br class="clearfix"/>
-</div>
+<ul class="nav navbar-nav">
+              <li class="active"><a href="{{ path('Accueil') }}">Accueil</a></li>
+              <li class="dropdown">
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Compte-Rendu <span class="caret"></span></a>
+              <ul class="dropdown-menu">
+                  <li><a href="#">Nouveaux</a></li>
+                  <li><a href="#">Consulter</a></li>
+                </ul>
+              </li>
+              <li class="dropdown">
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Consulter <span class="caret"></span></a>
+                <ul class="dropdown-menu">
+                  <li><a href="{{ path('Afficher')}}">Médicaments</a></li>
+                  <li><a href="#">Praticiens</a></li>
+                  <li><a href="#">Autres visiteurs</a></li>
+                </ul>
+              </li>
+            </ul>
