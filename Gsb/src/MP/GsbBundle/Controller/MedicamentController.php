@@ -36,19 +36,34 @@ class MedicamentController extends Controller
 		return $this->render('MPGsbBundle:Medicament:listeMedoc.html.twig', array('listMedocs' => $listMedocs));
 	}
 
-	public function FormAction(Request $request)
+	public function FormAction(Request $request,string $action,int $id)
     {
 
-    // On crée un objet Advert
+      
 
-    $Medicament = new Medicaments();
+      if ($action =="modifier") {
 
+        $Medicament = $this->getDoctrine()
+
+        ->getManager()
+
+        ->getRepository('MPGsbBundle:Medicaments')
+
+        ->find($id);
+
+        $formBuilder = $this->get('form.factory')->createBuilder(FormType::class, $Medicament);
+      }
+      elseif ($action == "ajouter") {
+        // On crée un objet Advert
+
+    
+        $Medicament = new Medicaments();
 
     // On crée le FormBuilder grâce au service form factory
 
     $formBuilder = $this->get('form.factory')->createBuilder(FormType::class, $Medicament);
-
-
+      }
+    
     // On ajoute les champs de l'entité que l'on veut à notre formulaire
 
     $formBuilder
@@ -92,6 +107,8 @@ class MedicamentController extends Controller
 
         $em->flush();
 
+        return $this->redirect($this->generateUrl('Afficher'));
+
       }
   }
 
@@ -108,12 +125,26 @@ class MedicamentController extends Controller
 
     ));
 
-    // Pour l'instant, pas de candidatures, catégories, etc., on les gérera plus tard
-
-
-    // À partir du formBuilder, on génère le formulaire
-
 }
+public function SupprimerAction($id)
+  {
+    
+    $Medicament = $this->getDoctrine()
+
+        ->getManager()
+
+        ->getRepository('MPGsbBundle:Medicaments')
+
+        ->find($id);
+
+    $em = $this->getDoctrine()->getManager();
+
+        $em->remove($Medicament);
+
+        $em->flush();
+
+        return $this->redirect($this->generateUrl('Afficher'));
+  }
 }
 ?>
 

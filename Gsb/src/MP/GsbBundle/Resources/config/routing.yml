@@ -10,5 +10,11 @@ Afficher:
     defaults: {_controller: MPGsbBundle:Medicament:liste}
 
 Form:
-    path:      /Form
+    path:      /Form/{action}/{id}
     defaults: {_controller: MPGsbBundle:Medicament:Form}
+
+Supprimer:
+
+    path:      /Supprimer/{id}
+
+    defaults:  { _controller: MPGsbBundle:Medicament:Supprimer}

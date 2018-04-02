@@ -2,7 +2,8 @@
 
 <h1> Liste des Medicaments</h1>
 
-<a href="{{ path('Form') }}">Ajouter un Médicament</a>
+
+<a href="{{ path ('Form', { 'action' : 'ajouter' , 'id' : 0 }) }}">Ajouter un Médicament</a>
 <table class="table">
 <thead>
 	<tr>
@@ -12,6 +13,7 @@
 	<th>Effet</td>
 	<th>Contre Indication</th>
 	<th>Prix</th>
+	<th>Action</th>
 	</tr>
 </thead>
 	{% for medoc in listMedocs %}
@@ -22,6 +24,8 @@
 <td>{{ medoc.effet }}</td>
 <td>{{ medoc.ContreIndic }}</td>
 <td>{{ medoc.prixEchantillon }}</td>
+<td><a href="{{ path('Form', { 'action' : 'modifier', 'id' : medoc.id }) }}">Modifier</a><br>
+<a href="{{ path('Supprimer', {'id' : medoc.id }) }}">Supprimer</a></td>
 </tr>
 {% endfor %}
 </table>
